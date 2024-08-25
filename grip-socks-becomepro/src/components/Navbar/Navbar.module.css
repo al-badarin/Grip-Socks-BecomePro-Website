@@ -1,0 +1,56 @@
+/* Basic styles for the navbar */
+.navbar {
+  background-color: #333;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.brandTitle {
+  font-size: 1.5rem;
+}
+
+.toggleButton {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.navLinks ul {
+  list-style: none;
+  display: flex;
+}
+
+.navLinks li {
+  margin: 0 10px;
+}
+
+.navLinks a {
+  color: white;
+  text-decoration: none;
+}
+
+.active {
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .toggleButton {
+    display: block;
+  }
+
+  .navLinks {
+    display: none;
+  }
+
+  .navLinks ul {
+    flex-direction: column;
+  }
+
+  .navLinks.active {
+    display: flex;
+  }
+}

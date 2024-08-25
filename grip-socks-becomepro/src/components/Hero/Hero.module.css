@@ -1,5 +1,5 @@
 .hero {
-  background-image: url('/src/assets/hero-bg.jpg'); /* Update this with your image path */
+  background-image: url('/src/assets/hero1.JPEG'); /* Update this with your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
@@ -36,20 +36,32 @@
 }
 
 .heroTitle {
-  font-size: 3.5rem;
+  font-size: 4rem; /* Increased font size */
   margin-bottom: 20px;
-  font-weight: bold;
+  font-weight: 800; /* Increased font weight */
   text-transform: uppercase;
+  color: #ffffff; /* White text */
+  background-color: rgba(
+    0,
+    52,
+    89,
+    0.8
+  ); /* Navy Blue semi-transparent background */
+  padding: 15px 20px;
+  border-radius: 10px;
+  display: inline-block;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3); /* Subtle box shadow */
 }
 
 .heroSubtitle {
   font-size: 1.5rem;
   margin-bottom: 30px;
+  color: #ffffff; /* White text for subtitle */
 }
 
 .ctaBtn {
-  background-color: #f39c12;
-  color: white;
+  background-color: #f39c12; /* Gold color */
+  color: #003459; /* Navy Blue text */
   padding: 15px 30px;
   text-decoration: none;
   font-size: 1.2rem;
@@ -58,13 +70,14 @@
 }
 
 .ctaBtn:hover {
-  background-color: #e67e22;
+  background-color: #e67e22; /* Darker gold on hover */
+  color: #ffffff; /* White text on hover */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 3rem;
   }
 
   .heroSubtitle {
@@ -74,5 +87,21 @@
   .ctaBtn {
     font-size: 1rem;
     padding: 12px 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .heroTitle {
+    font-size: 2.5rem;
+    padding: 10px 15px;
+  }
+
+  .heroSubtitle {
+    font-size: 1rem;
+  }
+
+  .ctaBtn {
+    font-size: 0.9rem;
+    padding: 10px 20px;
   }
 }

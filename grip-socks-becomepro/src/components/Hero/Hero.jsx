@@ -5,12 +5,12 @@ const Hero = () => {
   return (
     <section className={styles.hero}>
       <div className={styles.heroContent}>
-        <h1 className={styles.heroTitle}>Grip Socks by BecomePro</h1>
+        <h1 className={styles.heroTitle}>Grip Socks BecomePro</h1>
         <p className={styles.heroSubtitle}>
-          Enhance your performance with the best football grip socks.
+          Подобрете представянето си с най-добрите футболни грип чорапи.
         </p>
         <a href="#features" className={styles.ctaBtn}>
-          Learn More
+          Научете повече
         </a>
       </div>
     </section>

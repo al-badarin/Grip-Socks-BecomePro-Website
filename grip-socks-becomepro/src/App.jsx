@@ -1,7 +1,8 @@
-import Features from './components/Features/Features';
-import Hero from './components/Hero/Hero';
 import Navbar from './components/Navbar/Navbar';
+import Hero from './components/Hero/Hero';
+import Features from './components/Features/Features';
 import Pricing from './components/Pricing/Pricing';
+import OrderForm from './components/OrderForm/OrderForm';
 
 function App() {
   return (
@@ -10,6 +11,7 @@ function App() {
       <Hero />
       <Features />
       <Pricing />
+      <OrderForm />
     </>
   );
 }

@@ -1,13 +1,14 @@
 .orderForm {
-  padding: 50px 20px;
-  background-color: #f9f9f9;
+  padding: 60px 20px;
+  background-color: #003459; /* Navy blue background */
   text-align: center;
+  color: #ffffff; /* White text for contrast */
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 30px;
-  color: #333;
+  color: #f39c12; /* Gold color */
   font-weight: bold;
   text-transform: uppercase;
 }
@@ -16,29 +17,48 @@ form {
   max-width: 600px;
   margin: 0 auto;
   text-align: left;
+  background-color: #ffffff; /* White form background */
+  padding: 30px 40px; /* Added padding for better spacing */
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger box shadow */
 }
 
 .formGroup {
-  margin-bottom: 20px;
+  margin-bottom: 25px; /* Increased bottom margin for more spacing */
 }
 
 label {
   display: block;
-  font-size: 1rem;
-  color: #333;
+  font-size: 1.1rem;
+  color: #003459; /* Navy blue text */
   margin-bottom: 8px;
 }
 
 input {
   width: 100%;
-  padding: 10px;
+  padding: 12px;
   font-size: 1rem;
   border-radius: 5px;
   border: 1px solid #ccc;
+  box-sizing: border-box; /* Ensure padding and borders are included in width */
+  margin-top: 5px; /* Added top margin for spacing */
+  transition: border-color 0.3s ease;
+}
+
+input:focus {
+  border-color: #f39c12; /* Gold border on focus */
+  outline: none;
+}
+
+.error {
+  color: #e74c3c; /* Red color for errors */
+  font-size: 0.9rem;
+  margin-top: 5px;
+  display: block;
 }
 
 .ctaBtn {
-  background-color: #f39c12;
+  background-color: #f39c12; /* Gold background */
   color: white;
   padding: 15px 30px;
   font-size: 1.2rem;
@@ -47,15 +67,35 @@ input {
   cursor: pointer;
   transition: background-color 0.3s ease;
   width: 100%;
+  margin-top: 20px; /* Added margin-top for spacing */
 }
 
 .ctaBtn:hover {
-  background-color: #e67e22;
+  background-color: #e67e22; /* Darker gold on hover */
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   form {
-    padding: 0 20px;
+    padding: 20px; /* Adjusted padding for smaller screens */
+  }
+
+  .ctaBtn {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  input {
+    padding: 10px;
+    font-size: 0.9rem;
+  }
+
+  .ctaBtn {
+    font-size: 1rem;
   }
 }

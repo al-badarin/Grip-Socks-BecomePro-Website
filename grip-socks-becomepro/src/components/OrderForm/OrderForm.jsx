@@ -11,6 +11,22 @@ const OrderForm = () => {
     address: '',
   });
 
+  const [errors, setErrors] = useState({});
+
+  const validate = () => {
+    let tempErrors = {};
+    tempErrors.firstName = formData.firstName ? '' : 'Моля, въведете име.';
+    tempErrors.lastName = formData.lastName ? '' : 'Моля, въведете фамилия.';
+    tempErrors.phoneNumber = formData.phoneNumber.match(/^\+?[0-9]{7,15}$/)
+      ? ''
+      : 'Моля, въведете валиден телефонен номер.';
+    tempErrors.quantity =
+      formData.quantity > 0 ? '' : 'Моля, въведете валиден брой.';
+    tempErrors.address = formData.address ? '' : 'Моля, въведете адрес.';
+    setErrors(tempErrors);
+    return Object.values(tempErrors).every((x) => x === '');
+  };
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -21,38 +37,42 @@ const OrderForm = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    emailjs
-      .sendForm(
-        'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-        'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-        e.target,
-        'YOUR_USER_ID' // Replace with your EmailJS user ID
-      )
-      .then(
-        (result) => {
-          alert('Order submitted successfully!');
-        },
-        (error) => {
-          alert('An error occurred, please try again.');
-        }
-      );
+    if (validate()) {
+      emailjs
+        .sendForm(
+          'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
+          'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
+          e.target,
+          'YOUR_USER_ID' // Replace with your EmailJS user ID
+        )
+        .then(
+          (result) => {
+            alert('Поръчката е изпратена успешно!');
+          },
+          (error) => {
+            alert('Възникна грешка, моля опитайте отново.');
+          }
+        );
 
-    // Clear the form
-    setFormData({
-      firstName: '',
-      lastName: '',
-      phoneNumber: '',
-      quantity: 1,
-      address: '',
-    });
+      // Clear the form
+      setFormData({
+        firstName: '',
+        lastName: '',
+        phoneNumber: '',
+        quantity: 1,
+        address: '',
+      });
+    } else {
+      alert('Моля, попълнете всички полета коректно.');
+    }
   };
 
   return (
     <section id="order" className={styles.orderForm}>
-      <h2 className={styles.sectionTitle}>Order Your Grip Socks</h2>
+      <h2 className={styles.sectionTitle}>Поръчайте Grip Socks</h2>
       <form onSubmit={handleSubmit}>
         <div className={styles.formGroup}>
-          <label htmlFor="firstName">First Name:</label>
+          <label htmlFor="firstName">Име:</label>
           <input
             type="text"
             id="firstName"
@@ -61,9 +81,12 @@ const OrderForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.firstName && (
+            <span className={styles.error}>{errors.firstName}</span>
+          )}
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="lastName">Last Name:</label>
+          <label htmlFor="lastName">Фамилия:</label>
           <input
             type="text"
             id="lastName"
@@ -72,9 +95,12 @@ const OrderForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.lastName && (
+            <span className={styles.error}>{errors.lastName}</span>
+          )}
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="phoneNumber">Phone Number:</label>
+          <label htmlFor="phoneNumber">Телефонен номер:</label>
           <input
             type="tel"
             id="phoneNumber"
@@ -83,9 +109,12 @@ const OrderForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.phoneNumber && (
+            <span className={styles.error}>{errors.phoneNumber}</span>
+          )}
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="quantity">Number of Pairs:</label>
+          <label htmlFor="quantity">Брой чифта:</label>
           <input
             type="number"
             id="quantity"
@@ -95,9 +124,12 @@ const OrderForm = () => {
             min="1"
             required
           />
+          {errors.quantity && (
+            <span className={styles.error}>{errors.quantity}</span>
+          )}
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="address">Address of Ekont/Speedy:</label>
+          <label htmlFor="address">Адрес на Еконт/Спиди:</label>
           <input
             type="text"
             id="address"
@@ -106,9 +138,12 @@ const OrderForm = () => {
             onChange={handleChange}
             required
           />
+          {errors.address && (
+            <span className={styles.error}>{errors.address}</span>
+          )}
         </div>
         <button type="submit" className={styles.ctaBtn}>
-          Submit Order
+          Изпратете поръчка
         </button>
       </form>
     </section>

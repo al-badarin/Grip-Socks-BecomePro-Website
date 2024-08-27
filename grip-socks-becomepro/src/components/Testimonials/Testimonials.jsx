@@ -1,31 +1,33 @@
 import React from 'react';
 import styles from './Testimonials.module.css';
 
+// TODO: add some stories from the instagram hihlights?!?!
+
 const Testimonials = () => {
   const testimonials = [
     {
       quote:
-        'These Grip Socks have significantly improved my performance on the field. I feel more secure with every step.',
-      name: 'John Doe',
-      role: 'Professional Footballer',
+        'Тези Grip Socks значително подобриха представянето ми на терена. Чувствам се по-сигурен с всяка стъпка.',
+      name: 'Иван Иванов',
+      role: 'Професионален футболист',
     },
     {
       quote:
-        'The quality is top-notch, and they really help prevent blisters. Highly recommend to any serious athlete.',
-      name: 'Jane Smith',
-      role: 'Fitness Enthusiast',
+        'Качеството е изключително, и наистина помагат за предотвратяване на мехури. Препоръчвам ги на всеки сериозен атлет.',
+      name: 'Мария Петрова',
+      role: 'Фитнес ентусиаст',
     },
     {
       quote:
-        "Comfortable, durable, and they provide great grip. I don't play without them anymore.",
-      name: 'Mike Johnson',
-      role: 'Amateur Soccer Player',
+        'Комфортни, издръжливи и осигуряват страхотен захват. Вече не играя без тях.',
+      name: 'Михаил Георгиев',
+      role: 'Аматьорски футболист',
     },
   ];
 
   return (
     <section id="testimonials" className={styles.testimonials}>
-      <h2 className={styles.sectionTitle}>What Our Customers Say</h2>
+      <h2 className={styles.sectionTitle}>Какво казват нашите клиенти</h2>
       <div className={styles.testimonialsContainer}>
         {testimonials.map((testimonial, index) => (
           <div key={index} className={styles.testimonial}>

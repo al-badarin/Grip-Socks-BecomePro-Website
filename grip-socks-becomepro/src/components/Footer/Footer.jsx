@@ -1,11 +1,19 @@
 import React from 'react';
 import styles from './Footer.module.css';
-import { FaFacebookF, FaTwitter, FaInstagram } from 'react-icons/fa';
+import {
+  FaFacebookF,
+  FaTwitter,
+  FaInstagram,
+  FaTiktok,
+  FaLinkedin,
+  FaYoutube,
+} from 'react-icons/fa';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear(); // Get the current year dynamically
 
   return (
+    // todo: add real social media links
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.navigation}>
@@ -39,11 +47,17 @@ const Footer = () => {
             <a href="#" aria-label="Facebook">
               <FaFacebookF />
             </a>
-            <a href="#" aria-label="Twitter">
-              <FaTwitter />
+            <a href="#" aria-label="TikTok">
+              <FaTiktok />
+            </a>
+            <a href="#" aria-label="YouTube">
+              <FaYoutube />
             </a>
             <a href="#" aria-label="Instagram">
               <FaInstagram />
+            </a>
+            <a href="#" aria-label="LinkedIn">
+              <FaLinkedin />
             </a>
           </div>
         </div>

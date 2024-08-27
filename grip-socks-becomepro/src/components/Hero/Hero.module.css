@@ -3,13 +3,16 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 100vh;
+  height: 80vh; /* Full viewport height */
+  width: 90%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
   align-items: center;
   color: white;
   text-align: center;
   position: relative;
+  overflow: hidden; /* Ensures no overflow of background image */
 }
 
 .hero::after {
@@ -61,7 +64,7 @@
 
 .ctaBtn {
   background-color: #f39c12; /* Gold color */
-  color: #003459; /* Navy Blue text */
+  color: white; /* White text */
   padding: 15px 30px;
   text-decoration: none;
   font-size: 1.2rem;
@@ -71,7 +74,7 @@
 
 .ctaBtn:hover {
   background-color: #e67e22; /* Darker gold on hover */
-  color: #ffffff; /* White text on hover */
+  color: #003459; /* Navy Blue text on hover */
 }
 
 /* Responsive Design */

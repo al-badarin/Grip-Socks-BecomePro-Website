@@ -1,15 +1,31 @@
 .faq {
-  padding: 50px 20px;
-  background-color: #fff;
+  padding: 60px 20px;
+  background-color: #f9f9f9; /* Light background for contrast */
   text-align: center;
 }
 
 .sectionTitle {
-  font-size: 2.5rem;
+  font-size: 2.8rem;
   margin-bottom: 30px;
-  color: #333;
+  color: #003459; /* Navy blue color */
   font-weight: bold;
   text-transform: uppercase;
+}
+
+.searchBar {
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  border-radius: 25px;
+  border: 2px solid #003459; /* Navy blue border */
+  margin-bottom: 30px;
+  width: 80%;
+  max-width: 500px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.searchBar:focus {
+  border-color: #f39c12; /* Gold color on focus */
 }
 
 .faqContainer {
@@ -22,33 +38,67 @@
   margin-bottom: 20px;
   border-bottom: 1px solid #ddd;
   padding-bottom: 10px;
+  transition: border-color 0.3s ease;
+}
+
+.faqItem:hover {
+  border-bottom: 1px solid #f39c12; /* Gold border on hover */
 }
 
 .question {
-  font-size: 1.2rem;
+  font-size: 1.4rem;
   font-weight: bold;
-  color: #333;
+  color: #003459; /* Navy blue color */
   cursor: pointer;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  transition: color 0.3s ease;
+}
+
+.question:hover {
+  color: #f39c12; /* Gold color on hover */
 }
 
 .answer {
-  font-size: 1rem;
+  font-size: 1.1rem;
   color: #666;
   margin-top: 10px;
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 .toggleIcon {
   font-size: 1.5rem;
-  color: #f39c12;
+  color: #f39c12; /* Gold color for the toggle icon */
+}
+
+.noResults {
+  font-size: 1.2rem;
+  color: #003459;
+  font-weight: bold;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
   .faqContainer {
     padding: 0 20px;
+  }
+
+  .searchBar {
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .sectionTitle {
+    font-size: 2.2rem;
+  }
+
+  .question {
+    font-size: 1.3rem;
+  }
+
+  .answer {
+    font-size: 1rem;
   }
 }

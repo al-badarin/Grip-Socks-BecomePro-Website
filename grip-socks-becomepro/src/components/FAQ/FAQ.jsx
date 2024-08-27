@@ -3,6 +3,7 @@ import styles from './FAQ.module.css';
 
 const FAQ = () => {
   const [activeIndex, setActiveIndex] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   const toggleFAQ = (index) => {
     setActiveIndex(activeIndex === index ? null : index);
@@ -10,39 +11,90 @@ const FAQ = () => {
 
   const faqs = [
     {
-      question: 'What sizes do the Grip Socks come in?',
+      question: 'Какви размери предлагате за Grip Socks?',
       answer:
-        'Our Grip Socks are available in multiple sizes, ranging from small to extra-large, to fit all foot sizes.',
+        'Нашите Grip Socks се предлагат в различни размери, от малки до екстра големи, за да паснат на всички размери крака.',
     },
     {
-      question: 'How do I care for my Grip Socks?',
+      question: 'Как да се грижа за моите Grip Socks?',
       answer:
-        'For best results, wash your Grip Socks in cold water and let them air dry. Avoid using bleach or fabric softeners.',
+        'За най-добри резултати, изперете вашите Grip Socks в студена вода и ги оставете да изсъхнат на въздух. Избягвайте използването на белина или омекотители.',
     },
     {
-      question: 'Can I wear these socks for sports other than football?',
+      question: 'Мога ли да нося тези чорапи за спортове, различни от футбол?',
       answer:
-        'Yes! While our Grip Socks are designed for football, they are versatile and can be used for other sports like basketball, running, and more.',
+        'Да! Въпреки че нашите Grip Socks са проектирани за футбол, те са универсални и могат да се използват и за други спортове като баскетбол, бягане и други.',
+    },
+    {
+      question: 'Колко чифта Grip Socks трябва да имам?',
+      answer:
+        'Препоръчваме поне три чифта, за да можете да ги използвате редовно, докато единият се пере.',
+    },
+    {
+      question: 'Grip Socks подходящи ли са за деца?',
+      answer:
+        'Да, нашите Grip Socks са налични в размери, подходящи за деца и юноши.',
+    },
+    {
+      question: 'Колко време издържат Grip Socks?',
+      answer:
+        'С правилна грижа, нашите Grip Socks могат да издържат много сезони, без да губят качествата си.',
+    },
+    {
+      question: 'Grip Socks намаляват ли риска от наранявания?',
+      answer:
+        'Да, нашите Grip Socks осигуряват по-добро сцепление и стабилност, което може да помогне за предотвратяване на наранявания.',
+    },
+    {
+      question: 'Мога ли да върна Grip Socks, ако не съм доволен?',
+      answer:
+        'Да, предлагаме 30-дневен период за връщане, ако не сте доволни от покупката си.',
+    },
+    {
+      question: 'Какви са методите за плащане?',
+      answer:
+        'Приемаме различни методи за плащане, включително кредитни карти, дебитни карти и PayPal.',
+    },
+    {
+      question: 'Имате ли отстъпки при закупуване на повече от 5 чифта?',
+      answer:
+        'Да, предлагаме отстъпки при закупуване на по-голямо количество. Свържете се с нас за повече информация.',
     },
   ];
 
+  const filteredFAQs = faqs.filter((faq) =>
+    faq.question.toLowerCase().includes(searchTerm.toLowerCase()) ||
+    faq.answer.toLowerCase().includes(searchTerm.toLowerCase())
+  );
+
   return (
     <section id="faq" className={styles.faq}>
-      <h2 className={styles.sectionTitle}>Frequently Asked Questions</h2>
+      <h2 className={styles.sectionTitle}>Често задавани въпроси</h2>
+      <input
+        type="text"
+        placeholder="Търсене..."
+        className={styles.searchBar}
+        value={searchTerm}
+        onChange={(e) => setSearchTerm(e.target.value)}
+      />
       <div className={styles.faqContainer}>
-        {faqs.map((faq, index) => (
-          <div key={index} className={styles.faqItem}>
-            <div className={styles.question} onClick={() => toggleFAQ(index)}>
-              {faq.question}
-              <span className={styles.toggleIcon}>
-                {activeIndex === index ? '-' : '+'}
-              </span>
+        {filteredFAQs.length > 0 ? (
+          filteredFAQs.map((faq, index) => (
+            <div key={index} className={styles.faqItem}>
+              <div className={styles.question} onClick={() => toggleFAQ(index)}>
+                {faq.question}
+                <span className={styles.toggleIcon}>
+                  {activeIndex === index ? '-' : '+'}
+                </span>
+              </div>
+              {activeIndex === index && (
+                <div className={styles.answer}>{faq.answer}</div>
+              )}
             </div>
-            {activeIndex === index && (
-              <div className={styles.answer}>{faq.answer}</div>
-            )}
-          </div>
-        ))}
+          ))
+        ) : (
+          <p className={styles.noResults}>Няма намерени резултати.</p>
+        )}
       </div>
     </section>
   );

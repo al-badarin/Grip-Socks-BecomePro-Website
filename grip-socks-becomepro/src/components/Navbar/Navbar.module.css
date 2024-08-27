@@ -51,6 +51,14 @@
   color: #f39c12; /* Gold color for the hamburger icon */
 }
 
+.navLinks {
+  margin-top: 20px;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+}
+
 .navLinks ul {
   list-style: none;
   display: flex;

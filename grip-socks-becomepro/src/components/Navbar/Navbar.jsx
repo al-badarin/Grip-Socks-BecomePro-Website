@@ -1,14 +1,37 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import styles from './Navbar.module.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import logo from '../../assets/logo.png'; // Adjust the path according to your file structure
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const menuRef = useRef(null);
 
   const toggleNavbar = () => {
     setIsOpen(!isOpen);
   };
+
+  const closeMenu = () => {
+    setIsOpen(false);
+  };
+
+  const handleClickOutside = (event) => {
+    if (menuRef.current && !menuRef.current.contains(event.target)) {
+      closeMenu();
+    }
+  };
+
+  useEffect(() => {
+    if (isOpen) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
+  }, [isOpen]);
 
   return (
     <header className={styles.navbar}>
@@ -20,19 +43,30 @@ const Navbar = () => {
         <div className={styles.toggleButton} onClick={toggleNavbar}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </div>
-        <nav className={`${styles.navLinks} ${isOpen ? styles.active : ''}`}>
+        <nav
+          ref={menuRef}
+          className={`${styles.navLinks} ${isOpen ? styles.active : ''}`}
+        >
           <ul>
             <li>
-              <a href="#home">Начало</a>
+              <a href="#home" onClick={closeMenu}>
+                Начало
+              </a>
             </li>
             <li>
-              <a href="#features">Характеристики</a>
+              <a href="#features" onClick={closeMenu}>
+                Характеристики
+              </a>
             </li>
             <li>
-              <a href="#pricing">Цени</a>
+              <a href="#pricing" onClick={closeMenu}>
+                Цени
+              </a>
             </li>
             <li>
-              <a href="#order">Поръчай сега</a>
+              <a href="#order" onClick={closeMenu}>
+                Поръчай сега
+              </a>
             </li>
           </ul>
         </nav>

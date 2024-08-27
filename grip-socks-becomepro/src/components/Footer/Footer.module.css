@@ -1,5 +1,5 @@
 .footer {
-  background-color: #333;
+  background-color: #003459; /* Navy blue background */
   color: #fff;
   padding: 40px 20px;
   text-align: center;
@@ -17,7 +17,7 @@
 .footerTitle {
   font-size: 1.5rem;
   margin-bottom: 20px;
-  color: #f39c12;
+  color: #f39c12; /* Gold color for titles */
 }
 
 .footerLinks {
@@ -32,11 +32,30 @@
 .footerLinks a {
   color: #fff;
   text-decoration: none;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease, transform 0.3s ease;
+  position: relative;
+}
+
+.footerLinks a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -3px;
+  left: 0;
+  background-color: #f39c12; /* Gold underline */
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.footerLinks a:hover::before {
+  visibility: visible;
+  width: 100%;
 }
 
 .footerLinks a:hover {
-  color: #f39c12;
+  color: #f39c12; /* Gold color on hover */
+  transform: scale(1.05); /* Slight scale up on hover */
 }
 
 .contact p {
@@ -50,18 +69,20 @@
 
 .socialIcons a {
   color: #fff;
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+  font-size: 1.8rem;
+  transition: color 0.3s ease, transform 0.3s ease;
 }
 
 .socialIcons a:hover {
   color: #f39c12;
+  transform: scale(1.2); /* Scale up social icons on hover */
 }
 
 .footerBottom {
   margin-top: 20px;
-  border-top: 1px solid #444;
+  border-top: 1px solid #f39c12; /* Gold border on top */
   padding-top: 20px;
+  font-size: 0.9rem;
 }
 
 /* Responsive Design */
@@ -69,10 +90,23 @@
   .footerContainer {
     flex-direction: column;
     align-items: center;
-    text-align: left;
   }
 
   .socialIcons {
     justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .footerTitle {
+    font-size: 1.3rem;
+  }
+
+  .socialIcons a {
+    font-size: 1.5rem;
+  }
+
+  .footerBottom {
+    font-size: 0.8rem;
   }
 }

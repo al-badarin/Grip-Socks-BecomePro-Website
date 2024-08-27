@@ -1,12 +1,17 @@
 /* Basic styles for the navbar */
 .navbar {
-  background-color: #333;
+  background-color: #003459; /* Navy blue background */
   color: white;
   padding: 10px 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   position: sticky;
   top: 0;
   z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: #003459; /* Darker navy blue on hover */
 }
 
 .navContainer {
@@ -25,18 +30,25 @@
 .logo {
   width: 60px;
   height: 60px;
-  margin: 20px;
+  margin: 0 20px;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover {
+  transform: rotate(360deg); /* Cool rotate effect on hover */
 }
 
 .brandTitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: bold;
+  color: #f39c12; /* Gold color for the brand title */
 }
 
 .toggleButton {
   display: none;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   cursor: pointer;
+  color: #f39c12; /* Gold color for the hamburger icon */
 }
 
 .navLinks ul {
@@ -56,10 +68,28 @@
   font-size: 1.2rem;
   padding: 10px 0;
   transition: color 0.3s ease;
+  position: relative;
+}
+
+.navLinks a::before {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 3px;
+  bottom: -5px;
+  left: 0;
+  background-color: #f39c12; /* Gold color for underline */
+  visibility: hidden;
+  transition: all 0.3s ease-in-out;
+}
+
+.navLinks a:hover::before {
+  visibility: visible;
+  width: 100%;
 }
 
 .navLinks a:hover {
-  color: #f39c12;
+  color: #f39c12; /* Gold color on hover */
 }
 
 .active {
@@ -77,10 +107,11 @@
     position: absolute;
     top: 60px;
     right: 0;
-    background-color: #333;
+    background-color: #003459; /* Navy blue background */
     width: 100%;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: height 0.3s ease;
   }
 
   .navLinks ul {
@@ -93,5 +124,23 @@
 
   .navLinks li {
     margin: 10px 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .brandTitle {
+    font-size: 1.5rem;
+  }
+
+  .toggleButton {
+    font-size: 1.5rem;
+  }
+
+  .navLinks a {
+    font-size: 1rem;
+  }
+
+  .navLinks li {
+    margin: 8px 0;
   }
 }

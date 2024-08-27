@@ -5,29 +5,32 @@ import { FaShieldAlt, FaFutbol, FaCheckCircle } from 'react-icons/fa';
 const Features = () => {
   return (
     <section id="features" className={styles.features}>
-      <h2 className={styles.sectionTitle}>Why Choose Our Grip Socks?</h2>
+      <h2 className={styles.sectionTitle}>
+        Защо да изберете нашите Grip Socks?
+      </h2>
       <div className={styles.featuresContainer}>
         <div className={styles.feature}>
           <FaShieldAlt className={styles.icon} />
-          <h3 className={styles.featureTitle}>Top Quality</h3>
+          <h3 className={styles.featureTitle}>Високо качество</h3>
           <p className={styles.featureDescription}>
-            Our socks are made from high-quality materials to ensure durability
-            and comfort.
+            Нашите чорапи са изработени от висококачествени материали за да
+            осигурят издръжливост и комфорт.
           </p>
         </div>
         <div className={styles.feature}>
           <FaFutbol className={styles.icon} />
-          <h3 className={styles.featureTitle}>Enhanced Grip</h3>
+          <h3 className={styles.featureTitle}>Подобрено сцепление</h3>
           <p className={styles.featureDescription}>
-            Provides superior grip to enhance your performance on the field.
+            Осигуряват уникално стабилно сцепление, за да подобрите представянето си на
+            терена.
           </p>
         </div>
         <div className={styles.feature}>
           <FaCheckCircle className={styles.icon} />
-          <h3 className={styles.featureTitle}>Comfort Fit</h3>
+          <h3 className={styles.featureTitle}>Комфортно прилягане</h3>
           <p className={styles.featureDescription}>
-            Designed to fit snugly, preventing blisters and ensuring comfort
-            during the game.
+            Проектирани да прилягат плътно, предотвратявайки появата на пришки, крампи и мехури и
+            осигурявайки комфорт по време на игра.
           </p>
         </div>
       </div>

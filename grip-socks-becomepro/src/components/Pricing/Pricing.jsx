@@ -4,6 +4,7 @@ import styles from './Pricing.module.css';
 const Pricing = () => {
   // TODO: change the texts
   // TODO: make appear the real price for 5/10 pairs (strokover text)
+  // TODO: make pricing cards appear the same size
 
   return (
     <section id="pricing" className={styles.pricing}>

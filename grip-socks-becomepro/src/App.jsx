@@ -18,6 +18,8 @@ function App() {
       <Testimonials />
       <FAQ />
       <Footer />
+      {/* todo: add routing? */}
+      {/* todo: add 404 page */}
     </>
   );
 }

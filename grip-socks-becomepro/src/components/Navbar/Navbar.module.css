@@ -52,7 +52,6 @@
 }
 
 .navLinks {
-  border-top: 1px solid #f39c12; /* Gold border on top */
   margin-top: 20px;
   display: flex;
   align-content: center;
@@ -112,6 +111,7 @@
   }
 
   .navLinks {
+    border-top: 1px solid #f39c12; /* Gold border on top */
     display: none;
     position: absolute;
     top: 60px;

@@ -2,11 +2,18 @@ import React, { useState } from 'react';
 import styles from './OrderForm.module.css';
 import emailjs from 'emailjs-com';
 
+// Constants for EmailJS configuration
+const SERVICE_ID = 'grip-socks';
+const USER_TEMPLATE_ID = 'grip-socks-customers';
+const TEAM_TEMPLATE_ID = 'grip-socks-team';
+const USER_ID = 'KIebeciB9J7_v05kG';
+
 const OrderForm = () => {
   const [formData, setFormData] = useState({
     firstName: '',
     lastName: '',
     phoneNumber: '',
+    email: '',
     quantity: 1,
     address: '',
   });
@@ -20,6 +27,11 @@ const OrderForm = () => {
     tempErrors.phoneNumber = formData.phoneNumber.match(/^\+?[0-9]{7,15}$/)
       ? ''
       : 'Моля, въведете валиден телефонен номер.';
+    tempErrors.email = formData.email.match(
+      /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/
+    )
+      ? ''
+      : 'Моля, въведете валиден имейл адрес.';
     tempErrors.quantity =
       formData.quantity > 0 ? '' : 'Моля, въведете валиден брой.';
     tempErrors.address = formData.address ? '' : 'Моля, въведете адрес.';
@@ -38,27 +50,32 @@ const OrderForm = () => {
     e.preventDefault();
 
     if (validate()) {
-      emailjs
-        .sendForm(
-          'YOUR_SERVICE_ID', // Replace with your EmailJS service ID
-          'YOUR_TEMPLATE_ID', // Replace with your EmailJS template ID
-          e.target,
-          'YOUR_USER_ID' // Replace with your EmailJS user ID
-        )
-        .then(
-          (result) => {
-            alert('Поръчката е изпратена успешно!');
-          },
-          (error) => {
-            alert('Възникна грешка, моля опитайте отново.');
-          }
-        );
+      // Send email to the user
+      emailjs.sendForm(SERVICE_ID, USER_TEMPLATE_ID, e.target, USER_ID).then(
+        (result) => {
+          alert('Поръчката е изпратена успешно!');
+        },
+        (error) => {
+          alert('Възникна грешка, моля опитайте отново.');
+        }
+      );
+
+      // Send email to your team
+      emailjs.send(SERVICE_ID, TEAM_TEMPLATE_ID, formData, USER_ID).then(
+        (result) => {
+          console.log('Team notification sent successfully.');
+        },
+        (error) => {
+          console.log('Failed to send team notification.');
+        }
+      );
 
       // Clear the form
       setFormData({
         firstName: '',
         lastName: '',
         phoneNumber: '',
+        email: '',
         quantity: 1,
         address: '',
       });
@@ -112,6 +129,18 @@ const OrderForm = () => {
           {errors.phoneNumber && (
             <span className={styles.error}>{errors.phoneNumber}</span>
           )}
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="email">Имейл:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          {errors.email && <span className={styles.error}>{errors.email}</span>}
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="quantity">Брой чифта:</label>

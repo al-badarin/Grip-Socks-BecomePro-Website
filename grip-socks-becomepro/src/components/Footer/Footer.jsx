@@ -38,25 +38,50 @@ const Footer = () => {
         </div>
         <div className={styles.contact}>
           <h4 className={styles.footerTitle}>Контакти</h4>
-          <p>Email: become.pro2024@gmail.com</p>
+          <p>
+            Email:{' '}
+            <a className={styles.email} href="mailto:become.pro2024@gmail.com">
+              become.pro2024@gmail.com
+            </a>
+          </p>
           <p>Телефон: +359 888881476</p>
         </div>
         <div className={styles.social}>
           <h4 className={styles.footerTitle}>Последвайте ни</h4>
           <div className={styles.socialIcons}>
-            <a href="#" aria-label="Facebook">
+            <a
+              target="_blank"
+              href="https://www.facebook.com/profile.php?id=61559578864716"
+              aria-label="Facebook"
+            >
               <FaFacebookF />
             </a>
-            <a href="#" aria-label="TikTok">
+            <a
+              target="_blank"
+              href="https://www.tiktok.com/@become.pro2024"
+              aria-label="TikTok"
+            >
               <FaTiktok />
             </a>
-            <a href="#" aria-label="YouTube">
+            <a
+              target="_blank"
+              href="https://youtube.com/@becomepro-football?si=LY7uv641hzkl43"
+              aria-label="YouTube"
+            >
               <FaYoutube />
             </a>
-            <a href="#" aria-label="Instagram">
+            <a
+              target="_blank"
+              href="https://www.instagram.com/become.pro2024"
+              aria-label="Instagram"
+            >
               <FaInstagram />
             </a>
-            <a href="#" aria-label="LinkedIn">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/in/become-pro"
+              aria-label="LinkedIn"
+            >
               <FaLinkedin />
             </a>
           </div>

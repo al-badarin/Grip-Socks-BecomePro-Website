@@ -85,6 +85,11 @@
   font-size: 0.9rem;
 }
 
+.email {
+  color: #f39c12;
+  text-decoration: none;
+}
+
 /* Responsive Design */
 @media (max-width: 768px) {
   .footerContainer {

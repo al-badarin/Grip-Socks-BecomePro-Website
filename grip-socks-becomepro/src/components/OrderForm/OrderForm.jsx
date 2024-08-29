@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import styles from './OrderForm.module.css';
 import emailjs from 'emailjs-com';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css'; // Import CSS for toast notifications
 
 // Constants for EmailJS configuration
 const SERVICE_ID = 'grip-socks';
@@ -20,6 +22,16 @@ const OrderForm = () => {
 
   const [errors, setErrors] = useState({});
 
+  // Temporary functions to trigger success and error messages for testing
+  // const triggerSuccessMessage = () => {
+  //   toast.success('Поръчката е изпратена успешно!');
+  // };
+
+  // const triggerErrorMessage = () => {
+  //   toast.error('Възникна грешка, моля опитайте отново.');
+  // };
+
+  // Validation function to check form inputs
   const validate = () => {
     let tempErrors = {};
     tempErrors.firstName = formData.firstName ? '' : 'Моля, въведете име.';
@@ -39,6 +51,7 @@ const OrderForm = () => {
     return Object.values(tempErrors).every((x) => x === '');
   };
 
+  // Update form data on input change
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -46,6 +59,7 @@ const OrderForm = () => {
     });
   };
 
+  // Handle form submission
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -53,10 +67,11 @@ const OrderForm = () => {
       // Send email to the user
       emailjs.sendForm(SERVICE_ID, USER_TEMPLATE_ID, e.target, USER_ID).then(
         (result) => {
-          alert('Поръчката е изпратена успешно!');
+          toast.success('Поръчката е изпратена успешно!');
         },
         (error) => {
-          alert('Възникна грешка, моля опитайте отново.');
+          toast.error('Възникна грешка, моля опитайте отново.');
+          console.error('EmailJS Error:', error); // Log any errors from EmailJS
         }
       );
 
@@ -67,10 +82,11 @@ const OrderForm = () => {
         },
         (error) => {
           console.log('Failed to send team notification.');
+          console.error('EmailJS Error:', error); // Log any errors from EmailJS
         }
       );
 
-      // Clear the form
+      // Clear the form after submission
       setFormData({
         firstName: '',
         lastName: '',
@@ -175,6 +191,18 @@ const OrderForm = () => {
           Изпратете поръчка
         </button>
       </form>
+
+      {/* Test buttons for triggering toast notifications */}
+      {/* <div className={styles.testButtons}>
+        <button onClick={triggerSuccessMessage} className={styles.testBtn}>
+          Trigger Success Message
+        </button>
+        <button onClick={triggerErrorMessage} className={styles.testBtn}>
+          Trigger Error Message
+        </button>
+      </div> */}
+
+      <ToastContainer />
     </section>
   );
 };

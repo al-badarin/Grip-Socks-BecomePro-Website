@@ -41,14 +41,14 @@
 .brandTitle {
   font-size: 1.8rem;
   font-weight: bold;
-  color: #f39c12; /* Gold color for the brand title */
+  /* color: #f39c12;  */
 }
 
 .toggleButton {
   display: none;
   font-size: 1.8rem;
   cursor: pointer;
-  color: #f39c12; /* Gold color for the hamburger icon */
+  color: #f39c12; 
 }
 
 .navLinks {

@@ -29,7 +29,7 @@ Welcome to the Grip Socks BecomePro project repository. Grip Socks BecomePro is 
   - A comprehensive FAQ section with frontend search functionality.
 - **Toaster Notifications**
   - Success and error toaster notifications for form submissions and actions, providing immediate feedback to the user.
-  - **Footer**
+- **Footer**
   - A footer with quick links and social media icons for easy navigation and engagement.
 - **Responsive Design**
   - A fully responsive design that works seamlessly across desktop, tablet, and mobile devices.

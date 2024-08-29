@@ -4,7 +4,7 @@
   background-position: center;
   background-repeat: no-repeat;
   height: 80vh; /* Full viewport height */
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -36,11 +36,12 @@
   z-index: 2;
   max-width: 800px;
   padding: 0 20px;
+  margin-bottom: 90px;
 }
 
 .heroTitle {
-  font-size: 4rem; /* Increased font size */
-  margin-bottom: 20px;
+  font-size: 3rem; /* Increased font size */
+  margin-bottom: 5px;
   font-weight: 800; /* Increased font weight */
   text-transform: uppercase;
   color: #ffffff; /* White text */
@@ -58,6 +59,7 @@
 
 .heroSubtitle {
   font-size: 1.5rem;
+  /* margin-top: 50px; */
   margin-bottom: 30px;
   color: #ffffff; /* White text for subtitle */
 }
@@ -80,7 +82,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .heroTitle {
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .heroSubtitle {

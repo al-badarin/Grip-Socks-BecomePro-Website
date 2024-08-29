@@ -23,14 +23,14 @@ Welcome to the Grip Socks BecomePro project repository. Grip Socks BecomePro is 
   - A pricing section displaying the different packages available for purchase.
 - **Order Form**
   - A simple and user-friendly form for ordering grip socks, integrated with EmailJS for order submission without complex cart functionality.
-- **Footer**
-  - A footer with quick links and social media icons for easy navigation and engagement.
 - **Testimonials**
   - A section showcasing customer testimonials to build trust and credibility.
 - **Frequently Asked Questions (FAQ)**
   - A comprehensive FAQ section with frontend search functionality.
 - **Toaster Notifications**
   - Success and error toaster notifications for form submissions and actions, providing immediate feedback to the user.
+  - **Footer**
+  - A footer with quick links and social media icons for easy navigation and engagement.
 - **Responsive Design**
   - A fully responsive design that works seamlessly across desktop, tablet, and mobile devices.
 

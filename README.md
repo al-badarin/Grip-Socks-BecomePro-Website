@@ -96,7 +96,7 @@ Welcome to the Grip Socks BecomePro project repository. Grip Socks BecomePro is 
 
 ## Host
 
-The Grip Socks BecomePro platform is hosted on Firebase for both frontend deployment and backend services.
+The Grip Socks BecomePro platform is hosted on Firebase.
 
 - Frontend: Hosted at https://grip-socks-becomepro.web.app
   You can see it live here: <a href="https://grip-socks-becomepro.web.app">Grip Socks BecomePro</a>

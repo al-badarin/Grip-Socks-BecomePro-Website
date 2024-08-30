@@ -13,7 +13,6 @@ const Footer = () => {
   const currentYear = new Date().getFullYear(); // Get the current year dynamically
 
   return (
-    // todo: add real social media links
     <footer className={styles.footer}>
       <div className={styles.footerContainer}>
         <div className={styles.navigation}>

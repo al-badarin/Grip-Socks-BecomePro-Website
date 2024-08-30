@@ -1,7 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
-import styles from './Navbar.module.css';
+import { Link } from 'react-scroll'; 
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '/assets/logo.png'; 
+import styles from './Navbar.module.css';
+import logo from '/assets/logo.png';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -49,34 +50,49 @@ const Navbar = () => {
         >
           <ul>
             <li>
-              <a href="#home" onClick={closeMenu}>
+              <Link to="home" smooth={true} duration={500} onClick={closeMenu}>
                 Начало
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#features" onClick={closeMenu}>
+              <Link
+                to="features"
+                smooth={true}
+                duration={500}
+                onClick={closeMenu}
+              >
                 Характеристики
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#pricing" onClick={closeMenu}>
+              <Link
+                to="pricing"
+                smooth={true}
+                duration={500}
+                onClick={closeMenu}
+              >
                 Цени
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#order" onClick={closeMenu}>
+              <Link to="order" smooth={true} duration={500} onClick={closeMenu}>
                 Поръчай сега
-              </a>
+              </Link>
             </li>
             <li>
-              <a href="#testimonials" onClick={closeMenu}>
-                Отзиви от нашите клиенти
-              </a>
+              <Link
+                to="testimonials"
+                smooth={true}
+                duration={500}
+                onClick={closeMenu}
+              >
+                Отзиви
+              </Link>
             </li>
             <li>
-              <a href="#faq" onClick={closeMenu}>
+              <Link to="faq" smooth={true} duration={500} onClick={closeMenu}>
                 Често задавани въпроси
-              </a>
+              </Link>
             </li>
           </ul>
         </nav>

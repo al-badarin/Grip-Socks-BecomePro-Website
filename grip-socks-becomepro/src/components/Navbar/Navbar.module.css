@@ -77,6 +77,7 @@
   padding: 10px 0;
   transition: color 0.3s ease;
   position: relative;
+  cursor: pointer;
 }
 
 .navLinks a::before {

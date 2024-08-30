@@ -25,6 +25,7 @@
 .logoContainer {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .logo {
@@ -122,8 +123,8 @@
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: height 0.3s ease;
-    padding-top: 20px ;
-    padding-bottom: 20px ;
+    padding-top: 20px;
+    padding-bottom: 20px;
   }
 
   .navLinks ul {

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Link } from 'react-scroll'; 
+import { Link } from 'react-scroll';
 import { FaBars, FaTimes } from 'react-icons/fa';
 import styles from './Navbar.module.css';
 import logo from '/assets/logo.png';
@@ -37,10 +37,12 @@ const Navbar = () => {
   return (
     <header className={styles.navbar}>
       <div className={styles.navContainer}>
-        <div className={styles.logoContainer}>
-          <img src={logo} alt="BecomePro Logo" className={styles.logo} />
-          <div className={styles.brandTitle}>BecomePro</div>
-        </div>
+        <Link to="home" smooth={true} duration={500}>
+          <div className={styles.logoContainer}>
+            <img src={logo} alt="BecomePro Logo" className={styles.logo} />
+            <div className={styles.brandTitle}>BecomePro</div>
+          </div>
+        </Link>
         <div className={styles.toggleButton} onClick={toggleNavbar}>
           {isOpen ? <FaTimes /> : <FaBars />}
         </div>

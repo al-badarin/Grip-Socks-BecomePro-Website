@@ -1,7 +1,10 @@
 import React from 'react';
+import Slider from 'react-slick';
 import styles from './Testimonials.module.css';
 
-// TODO: add some stories from the instagram hihlights?!?!
+// Import slick-carousel CSS
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
 
 const Testimonials = () => {
   const testimonials = [
@@ -25,10 +28,20 @@ const Testimonials = () => {
     },
   ];
 
+  const settings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    autoplay: true,
+    autoplaySpeed: 3000,
+  };
+
   return (
     <section id="testimonials" className={styles.testimonials}>
       <h2 className={styles.sectionTitle}>Какво казват нашите клиенти</h2>
-      <div className={styles.testimonialsContainer}>
+      <Slider {...settings} className={styles.testimonialsContainer}>
         {testimonials.map((testimonial, index) => (
           <div key={index} className={styles.testimonial}>
             <p className={styles.quote}>"{testimonial.quote}"</p>
@@ -36,6 +49,21 @@ const Testimonials = () => {
             <p className={styles.role}>{testimonial.role}</p>
           </div>
         ))}
+      </Slider>
+      <div className={styles.storySection}>
+        <h3 className={styles.storyTitle}>Споделени истории</h3>
+        <Slider {...settings} className={styles.storyCarousel}>
+          <div>
+            <img src="/path-to-your-image/image1.jpg" alt="Client Story 1" />
+          </div>
+          <div>
+            <img src="/path-to-your-image/image2.jpg" alt="Client Story 2" />
+          </div>
+          <div>
+            <img src="/path-to-your-image/image3.jpg" alt="Client Story 3" />
+          </div>
+          {/* Add more images as needed */}
+        </Slider>
       </div>
     </section>
   );

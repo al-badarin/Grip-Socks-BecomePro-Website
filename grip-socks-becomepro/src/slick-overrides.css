@@ -1,4 +1,17 @@
 /* slick-overrides.css */
+.slick-dots {
+  bottom: -20px;
+  display: flex !important; /* Force flexbox layout */
+  justify-content: center; /* Center the dots */
+  flex-wrap: nowrap; /* Prevent wrapping */
+  overflow-x: auto; /* Allow horizontal scrolling if necessary */
+  white-space: nowrap; /* Ensure no wrapping inside the container */
+}
+
+.slick-dots li {
+  margin: 0 5px; /* Adjust margin between dots */
+}
+
 .slick-dots li button:before {
   font-size: 12px;
   color: #ffffff;
@@ -16,6 +29,117 @@
   transform: scale(1.2);
 }
 
-.slick-dots {
-  bottom: -20px;
+/* Responsive Design */
+
+/* Tablet Screens (between 768px and 1024px) */
+@media (max-width: 1024px) {
+  .slick-dots {
+    bottom: -15px;
+  }
+
+  .slick-dots li button:before {
+    font-size: 10px; /* Slightly smaller dots */
+  }
+
+  .slick-dots li:hover button:before {
+    transform: scale(1.1); /* Slightly less scale on hover */
+  }
+}
+
+/* Mobile Screens (less than 768px) */
+@media (max-width: 768px) {
+  .slick-dots {
+    bottom: -10px;
+  }
+
+  .slick-dots li button:before {
+    font-size: 8px; /* Smaller dots for mobile */
+  }
+
+  .slick-dots li:hover button:before {
+    transform: scale(1.05); /* Less scale on hover for mobile */
+  }
+}
+
+/* slick-overrides.css */
+
+/* Base styles for the slick-arrow buttons */
+.slick-arrow {
+  background-color: #f39c12; /* Always gold background */
+  border-radius: 50%; /* Make the arrows circular */
+  width: 40px;
+  height: 40px;
+  display: flex !important; /* Ensure flexbox display */
+  justify-content: center;
+  align-items: center;
+  opacity: 1; /* Fully opaque */
+  transition: none; /* Remove hover effect */
+  position: absolute; /* Ensure no extra space around the arrows */
+  z-index: 2; /* Ensure the arrows are above other elements */
+}
+
+/* Remove hover effect entirely */
+.slick-arrow:hover {
+  background-color: #f39c12; /* Maintain gold background */
+}
+
+/* Custom styles for the previous arrow */
+.slick-prev:before {
+  content: '←'; /* Left arrow symbol */
+  color: #ffffff; /* White color for the arrow */
+  font-size: 18px; /* Size of the arrow */
+}
+
+/* Custom styles for the next arrow */
+.slick-next:before {
+  content: '→'; /* Right arrow symbol */
+  color: #ffffff; /* White color for the arrow */
+  font-size: 18px; /* Size of the arrow */
+}
+
+/* Positioning the arrows */
+.slick-prev {
+  left: 20px; /* Move the left arrow closer to the content */
+}
+
+.slick-next {
+  right: 20px; /* Move the right arrow closer to the content */
+}
+
+/* Responsive Design */
+
+/* Tablet Screens (between 768px and 1024px) */
+@media (max-width: 1024px) {
+  .slick-arrow {
+    width: 35px;
+    height: 35px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 16px; /* Slightly smaller arrow size */
+  }
+
+
+}
+
+/* Mobile Screens (less than 768px) */
+@media (max-width: 768px) {
+  .slick-arrow {
+    width: 30px;
+    height: 30px;
+  }
+
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 14px; /* Smaller arrow size for mobile */
+  }
+
+  .slick-prev {
+    left: 30px; /* Adjust position on mobile screens */
+  }
+
+  .slick-next {
+    right: 30px; /* Adjust position on mobile screens */
+  }
 }

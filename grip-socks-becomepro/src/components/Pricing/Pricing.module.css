@@ -36,7 +36,7 @@
 
 .pricingOption {
   flex-basis: 30%;
-  max-width: 300px;
+  width: 300px;
   padding: 30px;
   background-color: #ffffff; /* White background */
   border-radius: 15px;
@@ -44,6 +44,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  height: 250px; /* Ensure all pricing cards are the same size */
 }
 
 .pricingOption:hover {
@@ -87,6 +88,13 @@
   font-weight: bold;
 }
 
+.oldPrice {
+  text-decoration: line-through;
+  color: #888888;
+  font-size: 1.6rem;
+  margin-right: 10px;
+}
+
 .pricingDescription {
   font-size: 1.1rem;
   color: #666666;
@@ -104,6 +112,7 @@
     flex-basis: 80%;
     max-width: none;
     margin-bottom: 30px;
+    height: auto; /* Allow auto height for smaller screens */
   }
 }
 

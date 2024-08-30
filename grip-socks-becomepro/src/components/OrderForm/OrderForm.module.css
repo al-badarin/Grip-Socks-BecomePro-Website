@@ -76,32 +76,23 @@ input:focus {
 
 .radioGroup {
   display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  margin-bottom: 20px;
+  flex-direction: column;
+  align-items: flex-start;
+  /* margin-bottom: 20px; */
 }
 
 .radioLabel {
   display: flex;
   align-items: center;
-  margin-right: 30px;
   cursor: pointer;
 }
 
-.radioLabel input[type='radio'] {
+input[name='currier'] {
   margin-right: 5px;
+  padding: 0;
   margin-left: 0;
+  cursor: pointer;
 }
-
-/* @media (max-width: 768px) {
-  .radioGroup {
-    justify-content: flex-start;
-  }
-
-  .radioLabel {
-    margin-right: 20px;
-  }
-} */
 
 .testButtons {
   margin-top: 20px;
@@ -127,7 +118,7 @@ input:focus {
 /* Responsive Design */
 @media (max-width: 768px) {
   form {
-    padding: 20px; /* Adjusted padding for smaller screens */
+    padding: 20px;
   }
 
   .ctaBtn {

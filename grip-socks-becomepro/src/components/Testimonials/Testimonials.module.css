@@ -33,26 +33,28 @@
 
 .testimonial {
   background-color: #ffffff; /* White background */
-  padding: 25px;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger box shadow */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Smaller box shadow */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
+  max-width: 80%; /* Smaller width */
+  margin: 0 auto; /* Centered */
 }
 
 .testimonial:hover {
-  transform: translateY(-10px) rotate(-1deg); /* Slight rotation on hover */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+  transform: translateY(-5px) rotate(-1deg); /* Slight rotation on hover */
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
 }
 
 .testimonial::before {
   content: '';
   position: absolute;
-  top: -50px;
-  right: -50px;
-  width: 100px;
-  height: 100px;
+  top: -30px;
+  right: -30px;
+  width: 70px;
+  height: 70px;
   background-color: rgba(
     3,
     52,
@@ -64,43 +66,69 @@
 }
 
 .testimonial:hover::before {
-  top: -70px;
-  right: -70px;
+  top: -40px;
+  right: -40px;
 }
 
 .quote {
-  font-size: 1.2rem;
+  font-size: 1rem;
   color: #003459; /* Navy blue text */
   font-style: italic;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 .name {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #f39c12; /* Gold color for names */
   margin-bottom: 5px;
 }
 
 .role {
-  font-size: 1.1rem;
+  font-size: 1rem;
   color: #777777;
 }
 
 .storySection {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .storyTitle {
-  font-size: 2rem;
+  font-size: 1.8rem;
   color: #f39c12; /* Gold color */
   margin-bottom: 20px;
 }
 
 .storyCarousel img {
-  width: 100%;
-  border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger box shadow */
+  width: 90%; /* Make images smaller */
+  margin: 0 auto; /* Center images */
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Smaller box shadow */
+}
+
+/* Custom styles for the slick dots */
+.slick-dots li button:before {
+  font-size: 12px; /* Increase the size of the dots */
+  color: #ffffff; /* Make the dots white */
+  opacity: 0.7; /* Slight transparency */
+  transition: opacity 0.3s ease;
+}
+
+/* Active dot style */
+.slick-dots li.slick-active button:before {
+  opacity: 1; /* Fully opaque active dot */
+  color: #f39c12; /* Change active dot color to gold */
+}
+
+/* Hover effect for the dots */
+.slick-dots li:hover button:before {
+  opacity: 1; /* Fully opaque on hover */
+  transform: scale(1.2); /* Slightly enlarge the dot on hover */
+}
+
+/* Positioning the dots a bit lower */
+.slick-dots {
+  bottom: -20px; /* Adjust the position of the dots */
 }
 
 /* Responsive Design */
@@ -111,9 +139,13 @@
   }
 
   .testimonial {
-    flex-basis: 80%;
+    flex-basis: 90%;
     max-width: none;
     margin-bottom: 20px;
+  }
+
+  .storyCarousel img {
+    width: 80%; /* Slightly smaller images on tablet */
   }
 }
 
@@ -123,14 +155,18 @@
   }
 
   .quote {
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 
   .name {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
   }
 
   .role {
-    font-size: 1rem;
+    font-size: 0.9rem;
+  }
+
+  .storyCarousel img {
+    width: 70%; /* Smaller images on mobile */
   }
 }

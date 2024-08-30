@@ -1,5 +1,5 @@
 .hero {
-  background-image: url('/src/assets/hero1.JPEG'); /* Update this with your image path */
+  background-image: url('/assets/hero1.JPEG'); /* Update this with your image path */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

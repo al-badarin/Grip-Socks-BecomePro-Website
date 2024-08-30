@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Navbar.module.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '../../assets/logo.png'; // Adjust the path according to your file structure
+import logo from '/assets/logo.png'; // Adjust the path according to your file structure
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);

@@ -10,8 +10,8 @@ const Pricing = () => {
           <h3 className={styles.pricingTitle}>1 Чифт</h3>
           <p className={styles.price}>15.99 лв.</p>
           <p className={styles.pricingDescription}>
-            Идеален избор за тестване на нашите висококачествени Grip Socks и
-            усещане за разликата.{' '}
+            Идеален избор да пробвате нашите висококачествени Grip Socks и да
+            усетите разликата.{' '}
           </p>
         </div>
         <div className={styles.pricingOption}>

@@ -21,16 +21,16 @@ const Features = () => {
           <FaFutbol className={styles.icon} />
           <h3 className={styles.featureTitle}>Подобрено сцепление</h3>
           <p className={styles.featureDescription}>
-            Осигуряват уникално стабилно сцепление, за да подобрите представянето си на
-            терена.
+            Осигуряват уникално стабилно сцепление, за да подобрите
+            представянето си на терена.
           </p>
         </div>
         <div className={styles.feature}>
           <FaCheckCircle className={styles.icon} />
           <h3 className={styles.featureTitle}>Комфортно прилягане</h3>
           <p className={styles.featureDescription}>
-            Проектирани да прилягат плътно, предотвратявайки появата на пришки, крампи и мехури и
-            осигурявайки комфорт по време на игра.
+            Проектирани да прилягат плътно, предотвратявайки появата на пришки,
+            крампи и мехури, осигурявайки комфорт по време на игра.
           </p>
         </div>
       </div>

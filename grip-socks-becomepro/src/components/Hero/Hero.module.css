@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 90vh; /* Full viewport height */
+  height: 90vh;
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -44,7 +44,8 @@
   margin-bottom: 5px;
   font-weight: 800; /* Increased font weight */
   text-transform: uppercase;
-  color: #f39c12; /* White text */
+  /* color: #f39c12;  */
+  color: #ffffff;
   background-color: rgba(
     0,
     52,

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-scroll';
+
 import styles from './Hero.module.css';
 
 const Hero = () => {
@@ -9,9 +11,17 @@ const Hero = () => {
         <p className={styles.heroSubtitle}>
           Подобрете представянето си с най-добрите футболни грип чорапи.
         </p>
-        <a href="#features" className={styles.ctaBtn}>
-          Научете повече
-        </a>
+
+        <li>
+          <Link
+            to="features"
+            className={styles.ctaBtn}
+            smooth={true}
+            duration={500}
+          >
+            Научете повече
+          </Link>
+        </li>
       </div>
     </section>
   );

@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import styles from './Navbar.module.css';
 import { FaBars, FaTimes } from 'react-icons/fa';
-import logo from '/assets/logo.png'; // Adjust the path according to your file structure
+import logo from '/assets/logo.png'; 
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -66,6 +66,16 @@ const Navbar = () => {
             <li>
               <a href="#order" onClick={closeMenu}>
                 Поръчай сега
+              </a>
+            </li>
+            <li>
+              <a href="#testimonials" onClick={closeMenu}>
+                Отзиви от нашите клиенти
+              </a>
+            </li>
+            <li>
+              <a href="#faq" onClick={closeMenu}>
+                Често задавани въпроси
               </a>
             </li>
           </ul>

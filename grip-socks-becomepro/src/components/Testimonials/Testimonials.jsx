@@ -49,7 +49,7 @@ const Testimonials = () => {
         ))}
       </Slider>
       <div className={styles.storySection}>
-        <h3 className={styles.storyTitle}>Споделени истории</h3>
+        <h3 className={styles.storyTitle}>Нашите Grip Socks в действие</h3>
         <Slider {...settings} className={styles.storyCarousel}>
           <div>
             <img

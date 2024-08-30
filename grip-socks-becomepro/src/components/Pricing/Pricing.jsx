@@ -2,11 +2,9 @@ import React from 'react';
 import styles from './Pricing.module.css';
 
 const Pricing = () => {
-  // TODO: change the texts
-  // TODO: make appear the real price for 5/10 pairs (strokover text)
-  // TODO: make pricing cards appear the same size
-
   return (
+    // TODO: change the texts in .pricingDescription
+
     <section id="pricing" className={styles.pricing}>
       <h2 className={styles.sectionTitle}>Цени</h2>
       <div className={styles.pricingContainer}>
@@ -19,16 +17,20 @@ const Pricing = () => {
         </div>
         <div className={styles.pricingOption}>
           <h3 className={styles.pricingTitle}>5 Чифта</h3>
-          <p className={styles.price}>69.99 лв.</p>
+          <p className={styles.price}>
+            <span className={styles.oldPrice}>79.95 лв.</span> 69.99 лв.
+          </p>
           <p className={styles.pricingDescription}>
-            Идеален за редовни играчи.
+            Получавате отстъпка и идеален избор за редовни играчи.
           </p>
         </div>
         <div className={styles.pricingOption}>
           <h3 className={styles.pricingTitle}>10 Чифта</h3>
-          <p className={styles.price}>129.99 лв.</p>
+          <p className={styles.price}>
+            <span className={styles.oldPrice}>159.90 лв.</span> 129.99 лв.
+          </p>
           <p className={styles.pricingDescription}>
-            Най-добра стойност за сериозни атлети.
+            Най-добра стойност за сериозни атлети с голяма отстъпка.
           </p>
         </div>
       </div>

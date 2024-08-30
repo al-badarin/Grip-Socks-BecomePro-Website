@@ -36,7 +36,7 @@
 
 .pricingOption {
   flex-basis: 30%;
-  width: 300px;
+  width: 330px;
   padding: 30px;
   background-color: #ffffff; /* White background */
   border-radius: 15px;
@@ -86,6 +86,7 @@
   color: #f39c12; /* Gold color for price */
   margin-bottom: 15px;
   font-weight: bold;
+  text-wrap: nowrap;
 }
 
 .oldPrice {

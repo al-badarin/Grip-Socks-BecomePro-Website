@@ -35,8 +35,11 @@
 }
 
 .pricingOption {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   flex-basis: 30%;
-  width: 330px;
+  width: 300px;
   padding: 30px;
   background-color: #ffffff; /* White background */
   border-radius: 15px;
@@ -44,7 +47,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  height: 250px; /* Ensure all pricing cards are the same size */
+  height: 300px; /* Ensures a consistent height across cards */
 }
 
 .pricingOption:hover {

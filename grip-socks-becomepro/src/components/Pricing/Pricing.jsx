@@ -18,7 +18,11 @@ const Pricing = () => {
         <div className={styles.pricingOption}>
           <h3 className={styles.pricingTitle}>5 Чифта</h3>
           <p className={styles.price}>
-            <span className={styles.oldPrice}>79.95 лв.</span> 69.99 лв.
+            <span className={styles.oldPrice}>
+              79.95 лв.
+              <br />
+            </span>{' '}
+            69.99 лв.
           </p>
           <p className={styles.pricingDescription}>
             Получавате отстъпка и идеален избор за редовни играчи.
@@ -27,7 +31,11 @@ const Pricing = () => {
         <div className={styles.pricingOption}>
           <h3 className={styles.pricingTitle}>10 Чифта</h3>
           <p className={styles.price}>
-            <span className={styles.oldPrice}>159.90 лв.</span> 129.99 лв.
+            <span className={styles.oldPrice}>
+              159.90 лв.
+              <br />
+            </span>{' '}
+            129.99 лв.
           </p>
           <p className={styles.pricingDescription}>
             Най-добра стойност за сериозни атлети с голяма отстъпка.

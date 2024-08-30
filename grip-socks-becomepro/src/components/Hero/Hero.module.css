@@ -3,7 +3,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  height: 80vh; /* Full viewport height */
+  height: 90vh; /* Full viewport height */
   width: 100%;
   margin: 0 auto;
   display: flex;
@@ -44,7 +44,7 @@
   margin-bottom: 5px;
   font-weight: 800; /* Increased font weight */
   text-transform: uppercase;
-  color: #ffffff; /* White text */
+  color: #f39c12; /* White text */
   background-color: rgba(
     0,
     52,
@@ -82,7 +82,7 @@
 /* Responsive Design */
 @media (max-width: 768px) {
   .heroTitle {
-    font-size: 2rem;
+    font-size: 2.4rem;
   }
 
   .heroSubtitle {
@@ -97,7 +97,7 @@
 
 @media (max-width: 480px) {
   .heroTitle {
-    font-size: 2.5rem;
+    font-size: 1.5rem;
     padding: 10px 15px;
   }
 

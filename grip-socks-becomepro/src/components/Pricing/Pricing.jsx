@@ -3,8 +3,6 @@ import styles from './Pricing.module.css';
 
 const Pricing = () => {
   return (
-    // TODO: change the texts in .pricingDescription
-
     <section id="pricing" className={styles.pricing}>
       <h2 className={styles.sectionTitle}>Цени</h2>
       <div className={styles.pricingContainer}>
@@ -40,8 +38,8 @@ const Pricing = () => {
             129.99 лв.
           </p>
           <p className={styles.pricingDescription}>
-            Максимална стойност и отлично качество на
-            най-изгодна цена за атлети, които не правят компромиси.{' '}
+            Максимална стойност и отлично качество на най-изгодна цена за
+            атлети, които не правят компромиси.{' '}
           </p>
         </div>
       </div>

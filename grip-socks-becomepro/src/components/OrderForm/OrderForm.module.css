@@ -76,21 +76,32 @@ input:focus {
 
 .radioGroup {
   display: flex;
-  /* justify-content: space-around; */
-  margin-top: 10px;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
 }
 
 .radioLabel {
-  margin-right: 40px;
   display: flex;
   align-items: center;
-  font-size: 1rem;
-  color: #333;
+  margin-right: 30px;
+  cursor: pointer;
 }
 
-.radioLabel input {
-  margin-right: 8px;
+.radioLabel input[type='radio'] {
+  margin-right: 5px;
+  margin-left: 0;
 }
+
+/* @media (max-width: 768px) {
+  .radioGroup {
+    justify-content: flex-start;
+  }
+
+  .radioLabel {
+    margin-right: 20px;
+  }
+} */
 
 .testButtons {
   margin-top: 20px;

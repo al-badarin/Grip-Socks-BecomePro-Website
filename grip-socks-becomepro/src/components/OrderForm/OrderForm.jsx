@@ -174,6 +174,39 @@ const OrderForm = () => {
           )}
         </div>
         <div className={styles.formGroup}>
+          <label htmlFor="currier">Избор на куриер - Еконт/Спиди:</label>
+          <div className={styles.radioGroup}>
+            <label className={styles.radioLabel}>
+              <input
+                type="radio"
+                id="currierEkont"
+                name="currier"
+                value="Еконт"
+                checked={formData.currier === 'Еконт'}
+                onChange={handleChange}
+                required
+              />
+              Еконт
+            </label>
+            <label className={styles.radioLabel}>
+              <input
+                type="radio"
+                id="currierSpeedy"
+                name="currier"
+                value="Спиди"
+                checked={formData.currier === 'Спиди'}
+                onChange={handleChange}
+                required
+              />
+              Спиди
+            </label>
+          </div>
+          {errors.currier && (
+            <span className={styles.error}>{errors.currier}</span>
+          )}
+        </div>
+
+        <div className={styles.formGroup}>
           <label htmlFor="address">Адрес на Еконт/Спиди:</label>
           <input
             type="text"

@@ -12,7 +12,8 @@ const Pricing = () => {
           <h3 className={styles.pricingTitle}>1 Чифт</h3>
           <p className={styles.price}>15.99 лв.</p>
           <p className={styles.pricingDescription}>
-            Перфектен за пробване на нашите Grip Socks.
+            Идеален избор за тестване на нашите висококачествени Grip Socks и
+            усещане за разликата.{' '}
           </p>
         </div>
         <div className={styles.pricingOption}>
@@ -25,7 +26,8 @@ const Pricing = () => {
             69.99 лв.
           </p>
           <p className={styles.pricingDescription}>
-            Получавате отстъпка и идеален избор за редовни играчи.
+            Оптимално количество за играчи, които търсят надеждност и комфорт на
+            всяка тренировка.{' '}
           </p>
         </div>
         <div className={styles.pricingOption}>
@@ -38,7 +40,8 @@ const Pricing = () => {
             129.99 лв.
           </p>
           <p className={styles.pricingDescription}>
-            Най-добра стойност за сериозни атлети с голяма отстъпка.
+            Максимална стойност и отлично качество на
+            най-изгодна цена за атлети, които не правят компромиси.{' '}
           </p>
         </div>
       </div>

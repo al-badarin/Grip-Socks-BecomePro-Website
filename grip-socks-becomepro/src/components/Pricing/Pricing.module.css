@@ -39,7 +39,7 @@
   flex-direction: column;
   justify-content: space-between;
   flex-basis: 30%;
-  width: 300px;
+  width: 350px;
   padding: 30px;
   background-color: #ffffff; /* White background */
   border-radius: 15px;
@@ -47,7 +47,7 @@
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   position: relative;
   overflow: hidden;
-  height: 300px; /* Ensures a consistent height across cards */
+  height: auto;
 }
 
 .pricingOption:hover {

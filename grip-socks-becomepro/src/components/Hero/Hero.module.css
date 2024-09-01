@@ -31,6 +31,52 @@
   z-index: 1;
 }
 
+.promoBanner span.green {
+  color: #28a745; /* Attractive green color */
+  font-weight: bold; /* Make the text bold */
+  font-size: 1.2em; /* Slightly larger text size */
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+  animation: pulse 1.5s infinite; /* Add a pulsing effect */
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Promo Banner */
+.promoBanner {
+  cursor: pointer;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  background-color: #f39c12; /* Gold background for the promo */
+  color: #003459; /* Navy blue text */
+  padding: 10px;
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+  z-index: 3;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Slight shadow for depth */
+}
+
+.promoLink {
+  color: #003459; /* Navy blue text for the link */
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.promoLink:hover {
+  color: #ffffff; /* White text on hover */
+}
+
 .heroContent {
   position: relative;
   z-index: 2;
@@ -95,6 +141,11 @@
     font-size: 1rem;
     padding: 12px 25px;
   }
+
+  .promoBanner {
+    font-size: 0.9rem; /* Smaller font on tablets */
+    padding: 8px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -110,5 +161,10 @@
   .ctaBtn {
     font-size: 0.9rem;
     padding: 10px 20px;
+  }
+
+  .promoBanner {
+    font-size: 0.8rem; /* Smaller font on mobile */
+    padding: 6px;
   }
 }

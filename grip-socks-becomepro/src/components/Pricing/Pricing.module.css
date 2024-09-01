@@ -27,6 +27,44 @@
   bottom: 0;
 }
 
+/* Promo Banner Styles */
+.promoContainer {
+  margin-bottom: 40px;
+}
+
+.promoBanner {
+  background-color: #f39c12; /* Gold background for the promo */
+  color: #003459; /* Navy blue text */
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  animation: pulse 2s infinite; /* Subtle animation to draw attention */
+}
+
+.promoText {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.highlight {
+  color: #ffffff; /* White text for emphasis */
+  background-color: #003459; /* Navy background for emphasis */
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+/* Keyframes for pulse animation */
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
 .pricingContainer {
   display: flex;
   justify-content: space-around;
@@ -135,5 +173,9 @@
 
   .pricingDescription {
     font-size: 1rem;
+  }
+
+  .promoText {
+    font-size: 1.3rem;
   }
 }

@@ -5,7 +5,7 @@ const Pricing = () => {
   return (
     <section id="pricing" className={styles.pricing}>
       <h2 className={styles.sectionTitle}>Цени</h2>
-      <div className={styles.promoContainer}>
+      {/* <div className={styles.promoContainer}>
         <div className={styles.promoBanner}>
           <p className={styles.promoText}>
             Специална оферта!{' '}
@@ -16,7 +16,7 @@ const Pricing = () => {
             Офертата е валидна до 08.09.2024 23:59 ч.
           </p>
         </div>
-      </div>
+      </div> */}
       <div className={styles.pricingContainer}>
         <div className={styles.pricingOption}>
           <h3 className={styles.pricingTitle}>1 Чифт</h3>

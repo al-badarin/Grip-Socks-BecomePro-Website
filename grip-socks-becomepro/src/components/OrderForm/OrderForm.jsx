@@ -16,20 +16,13 @@ const OrderForm = () => {
     lastName: '',
     phoneNumber: '',
     email: '',
-    quantity: 1,
+    blackQuantity: 0,
+    whiteQuantity: 0,
     address: '',
+    currier: '',
   });
 
   const [errors, setErrors] = useState({});
-
-  // Temporary functions to trigger success and error messages for testing
-  // const triggerSuccessMessage = () => {
-  //   toast.success('Поръчката е изпратена успешно!');
-  // };
-
-  // const triggerErrorMessage = () => {
-  //   toast.error('Възникна грешка, моля опитайте отново.');
-  // };
 
   // Validation function to check form inputs
   const validate = () => {
@@ -44,8 +37,10 @@ const OrderForm = () => {
     )
       ? ''
       : 'Моля, въведете валиден имейл адрес.';
-    tempErrors.quantity =
-      formData.quantity > 0 ? '' : 'Моля, въведете валиден брой.';
+    tempErrors.blackQuantity =
+      formData.blackQuantity > 0 || formData.whiteQuantity > 0
+        ? ''
+        : 'Моля, въведете количество за черни или бели чорапи.';
     tempErrors.address = formData.address ? '' : 'Моля, въведете адрес.';
     setErrors(tempErrors);
     return Object.values(tempErrors).every((x) => x === '');
@@ -92,8 +87,10 @@ const OrderForm = () => {
         lastName: '',
         phoneNumber: '',
         email: '',
-        quantity: 1,
+        blackQuantity: 0,
+        whiteQuantity: 0,
         address: '',
+        currier: '',
       });
     } else {
       alert('Моля, попълнете всички полета коректно.');
@@ -159,19 +156,31 @@ const OrderForm = () => {
           {errors.email && <span className={styles.error}>{errors.email}</span>}
         </div>
         <div className={styles.formGroup}>
-          <label htmlFor="quantity">Брой чифта:</label>
+          <label htmlFor="blackQuantity">Брой черни чифта:</label>
           <input
             type="number"
-            id="quantity"
-            name="quantity"
-            value={formData.quantity}
+            id="blackQuantity"
+            name="blackQuantity"
+            value={formData.blackQuantity}
             onChange={handleChange}
-            min="1"
+            min="0"
             required
           />
-          {errors.quantity && (
-            <span className={styles.error}>{errors.quantity}</span>
+          {errors.blackQuantity && (
+            <span className={styles.error}>{errors.blackQuantity}</span>
           )}
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="whiteQuantity">Брой бели чифта:</label>
+          <input
+            type="number"
+            id="whiteQuantity"
+            name="whiteQuantity"
+            value={formData.whiteQuantity}
+            onChange={handleChange}
+            min="0"
+            required
+          />
         </div>
         <div className={styles.formGroup}>
           <label htmlFor="currier">Избор на куриер - Еконт/Спиди:</label>
@@ -224,16 +233,6 @@ const OrderForm = () => {
           Изпратете поръчка
         </button>
       </form>
-
-      {/* Test buttons for triggering toast notifications */}
-      {/* <div className={styles.testButtons}>
-        <button onClick={triggerSuccessMessage} className={styles.testBtn}>
-          Trigger Success Message
-        </button>
-        <button onClick={triggerErrorMessage} className={styles.testBtn}>
-          Trigger Error Message
-        </button>
-      </div> */}
 
       <ToastContainer />
     </section>

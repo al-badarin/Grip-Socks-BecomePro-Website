@@ -1,0 +1,7 @@
+your task: 
+
+- replace all texts with bulgarian language
+- make the best ui / ux
+- use the colors i provided you with
+- add some unique cool elements 
+- add responsiveness, effects and transitions

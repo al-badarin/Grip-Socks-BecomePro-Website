@@ -20,7 +20,7 @@ const Pricing = () => {
       <div className={styles.pricingContainer}>
         <div className={styles.pricingOption}>
           <h3 className={styles.pricingTitle}>1 Чифт</h3>
-          <p className={styles.price}>15.99 лв.</p>
+          <p className={styles.price}>19.99 лв.</p>
           <p className={styles.pricingDescription}>
             Идеален избор да пробвате нашите висококачествени Grip Socks и да
             усетите разликата.
@@ -30,10 +30,10 @@ const Pricing = () => {
           <h3 className={styles.pricingTitle}>5 Чифта</h3>
           <p className={styles.price}>
             <span className={styles.oldPrice}>
-              79.95 лв.
+              99.95 лв.
               <br />
             </span>
-            69.99 лв.
+            79.99 лв.
           </p>
           <p className={styles.pricingDescription}>
             Оптимално количество за играчи, които търсят надеждност и комфорт на
@@ -44,10 +44,10 @@ const Pricing = () => {
           <h3 className={styles.pricingTitle}>10 Чифта</h3>
           <p className={styles.price}>
             <span className={styles.oldPrice}>
-              159.90 лв.
+              199.99 лв.
               <br />
             </span>
-            129.99 лв.
+            169.99 лв.
           </p>
           <p className={styles.pricingDescription}>
             Максимална стойност и отлично качество на най-изгодна цена за

@@ -41,6 +41,7 @@ const OrderForm = () => {
       formData.blackQuantity > 0 || formData.whiteQuantity > 0
         ? ''
         : 'Моля, въведете количество за черни или бели чорапи.';
+    tempErrors.socksSize = formData.socksSize ? '' : 'Моля, въведете размер.';
     tempErrors.address = formData.address ? '' : 'Моля, въведете адрес.';
     setErrors(tempErrors);
     return Object.values(tempErrors).every((x) => x === '');
@@ -89,6 +90,7 @@ const OrderForm = () => {
         email: '',
         blackQuantity: 0,
         whiteQuantity: 0,
+        socksSize: 0,
         address: '',
         currier: '',
       });
@@ -177,6 +179,18 @@ const OrderForm = () => {
             id="whiteQuantity"
             name="whiteQuantity"
             value={formData.whiteQuantity}
+            onChange={handleChange}
+            min="0"
+            required
+          />
+        </div>
+        <div className={styles.formGroup}>
+          <label htmlFor="socksSize">Размер:</label>
+          <input
+            type="number"
+            id="socksSize"
+            name="socksSize"
+            value={formData.socksSize}
             onChange={handleChange}
             min="0"
             required

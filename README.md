@@ -2,6 +2,8 @@
 
 Welcome to the Grip Socks BecomePro project repository. Grip Socks BecomePro is a dedicated platform designed to promote and sell high-quality grip socks for football players. The project is focused on providing an engaging and user-friendly experience for customers to learn about and purchase grip socks.
 
+![Preview Image]('./image.png')
+
 ## Table of Contents
 
 - [Features](#features)
